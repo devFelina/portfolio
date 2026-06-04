@@ -1,5 +1,5 @@
 import { useState } from "react"; // Added missing useState import
-import { Button } from "@/components/Button";
+import { Button } from "/src/components/Button";
 import emailjs from "@emailjs/browser";
 // Added standard Lucide icon imports (or adjust to match your project icon library)
 import { Send, CheckCircle, AlertCircle } from "lucide-react"; 
