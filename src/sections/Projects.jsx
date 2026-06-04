@@ -15,63 +15,70 @@ const GitHubIcon = ({ className = "" }) => (
 const projects = [
   {
     year: "2026",
-    title: "Nexar — Quantum/Classical Workload Orchestration",
+    title: "Car Price Prediction System",
     description:
-      "Routes workloads between classical compute, quantum simulators, and quantum hardware.",
-    tags: ["Python", "TypeScript", "FastAPI", "React"],
-    extra: "+3",
-    url: "#",
-    githubUrl: "#",
+      "AutoPulse is an intelligent machine learning system that accurately predicts a vehicle's current market value based on real-world data.",
+    descriptionExtended:
+      "Built in Python using real-world car data of over 10,000 rows, this system trains a Scikit-learn Random Forest Regressor combined with a custom Pandas rule-based layer that targets premium trims for enhanced pricing accuracy. The entire pipeline—complete with engineered features like usage intensity and performance metrics (MAE / R^2)—is serialized into a .pkl file via Joblib for seamless deployment and live depreciation simulations.",
+    tags: ["Python", "Pandas", "Scikit-learn", "Joblib"],
+    extra: "",
+    url: "https://github.com/devFelina/car-price-predictor",
+    githubUrl: "https://github.com/devFelina/car-price-predictor",
   },
   {
     year: "2026",
-    title: "LaundrIQ — Cloud-Native Laundry Management",
+    title: "Car Dealership MERN Application",
     description:
-      "Microservices-based laundry platform with CI/CD, DevSecOps, and containerized deployment.",
-    tags: ["TypeScript", "Java", "Docker", "Terraform"],
-    extra: "+3",
-    url: "#",
-    githubUrl: "#",
+      "A full-stack MERN (MongoDB, Express.js, React.js, Node.js) web application designed to manage vehicle sales, customer interactions, and dealership operations.",
+    descriptionExtended:"A full-stack MERN (MongoDB, Express.js, React.js, Node.js) web application designed to manage vehicle sales, customer interactions, and dealership operations. This system demonstrates a scalable architecture with real-world business modules such as sales, leads, appointments, and notifications.",
+    tags: ["JavaScript", "React.js", "Node.js", "Express.js", "MongoDB"],
+    extra: "",
+    url: "https://github.com/devFelina/car-dealership-system",
+    githubUrl: "https://github.com/devFelina/car-dealership-system",
   },
   {
     year: "2026",
-    title: "POSiFy — Digital Restaurant (SaaS POS)",
+    title: "Email Automation System",
     description:
-      "Cloud-based, multi-tenant SaaS POS platform for restaurants and cafes.",
-    tags: ["TypeScript", "Java", "Docker"],
-    extra: "UI",
-    url: "#",
-    githubUrl: "#",
+      "This AI-powered system automatically fetches emails from Gmail, cleans and classifies them by type, and uses a Transformer model to deliver concise summaries directly to Telegram.",
+    descriptionExtended:"Built with FastAPI and SQLite, this backend securely accesses the Gmail API using OAuth 2.0 and utilizes APScheduler to regularly pull, clean, and deduplicate incoming messages. It leverages a Hugging Face T5 Transformer model to classify email intent—such as finance, OTPs, or spam—and generates summaries that are instantly dispatched via the Telegram Bot API.",
+    tags: ["Python", "Hugging Face", "FastAPI", "SQLite"],
+    extra: "",
+    url: "https://github.com/devFelina/email-automation-system",
+    githubUrl: "https://github.com/devFelina/email-automation-system",
   },
   {
-    year: "2025",
-    title: "AtlasFlow — Analytics Dashboard",
+    year: "2026",
+    title: "AI Branch Cards — Chrome Extension",
     description:
-      "A real-time analytics dashboard with elegant reporting, filtering, and role-aware views.",
-    tags: ["React", "Tailwind", "Charts", "Node.js"],
-    extra: "Live",
-    url: "#",
-    githubUrl: "#",
+      "A smart Chrome extension that transforms AI conversations into interactive branch cards, allowing users to explore concepts without losing the main chat flow.",
+    descriptionExtended:"Built as a lightweight browser extension, this tool injects an interactive layer into web-based AI interfaces to capture user-selected text and pass context-aware snippets to an LLM background script. By isolating these exploratory follow-up questions and summaries inside independent, modular UI cards, it eliminates context-switching while preserving the state and continuity of the main chat window.",
+    tags: ["JavaScript"],
+    extra: "",
+    url: "https://github.com/devFelina/ticky-otes",
+    githubUrl: "https://github.com/devFelina/ticky-otes",
   },
   {
-    year: "2025",
-    title: "NovaStudio — Portfolio Builder",
+    year: "2026",
+    title: "Class Management System",
     description:
-      "A fast portfolio builder for creators with reusable sections and polished motion.",
-    tags: ["React", "Vite", "Framer Motion", "CSS"],
-    extra: "UX",
-    url: "#",
-    githubUrl: "#",
+      "This Class Management System provides a clean web-based portal for administrators to easily handle full CRUD operations for managing students, tutors, and courses.",
+    descriptionExtended:"Built using the Java Spring Boot framework and managed via Maven, this enterprise-grade backend handles secure data persistence using a MySQL database. The application exposes robust RESTful endpoints for student, tutor, and course data manipulation, deploying seamlessly onto an embedded Apache Tomcat server for high-performance request handling.",
+    tags: ["Java", "Spring Boot", "MySQL"],
+    extra: "Contribute to user management.",
+    url: "https://github.com/devFelina/home-tutor",
+    githubUrl: "https://github.com/devFelina/home-tutor",
   },
   {
-    year: "2024",
-    title: "PulseTrack — Team Operations Hub",
+    year: "2026",
+    title: "Blockchain System",
     description:
-      "A lightweight operations hub for collaboration, visibility, and progress tracking.",
-    tags: ["TypeScript", "API", "PostgreSQL"],
-    extra: "SaaS",
-    url: "#",
-    githubUrl: "#",
+      "Mini blockchain implementation in Python with Proof-of-Work, transactions, and REST API.",
+    descriptionExtended:"",
+    tags: ["Python", "Flask", "SHA-256"],
+    extra: "Educational project.",
+    url: "https://github.com/devFelina/blockchain",
+    githubUrl: "https://github.com/devFelina/blockchain",
   },
 ];
 
@@ -103,7 +110,7 @@ export const Projects = () => {
           {projects.map((project, index) => (
             <article
               key={project.title}
-              className="group relative overflow-hidden rounded-[1.75rem] border border-border bg-card/70 p-6 sm:p-7 transition-all duration-300 hover:-translate-y-1 hover:border-white/20 hover:bg-card/90 hover:shadow-[0_0_40px_rgba(255,255,255,0.05)] animate-fade-in"
+              className="group relative w-full max-w-sm mx-auto overflow-hidden rounded-[1.75rem] border border-border bg-card/70 p-5 sm:p-6 transition-all duration-300 hover:-translate-y-1 hover:border-white/20 hover:bg-card/90 hover:shadow-[0_0_40px_rgba(255,255,255,0.05)] animate-fade-in"
               style={{ animationDelay: `${(index + 1) * 80}ms` }}
             >
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(255,255,255,0.08),_transparent_35%)] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
@@ -113,7 +120,7 @@ export const Projects = () => {
                   <p className="text-xs sm:text-sm tracking-[0.28em] uppercase text-muted-foreground">
                     {project.year}
                   </p>
-                  <h3 className="mt-4 text-2xl sm:text-[1.7rem] font-semibold leading-tight text-foreground max-w-[16ch]">
+                  <h3 className="mt-3 text-xl sm:text-2xl font-semibold leading-tight text-foreground max-w-[16ch]">
                     {project.title}
                   </h3>
                 </div>
@@ -130,22 +137,22 @@ export const Projects = () => {
                 </div>
               </div>
 
-              <p className="relative mt-6 max-w-md text-sm sm:text-base leading-7 text-muted-foreground">
+              <p className="relative mt-4 max-w-md text-sm leading-6 text-muted-foreground">
                 {project.description}
               </p>
 
-              <div className="relative mt-8 flex flex-wrap gap-3">
+              <div className="relative mt-6 flex flex-wrap gap-2.5">
                 {project.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="rounded-full border border-border/80 bg-background/30 px-3.5 py-1.5 text-xs font-medium text-muted-foreground transition-colors duration-300 group-hover:border-white/15 group-hover:text-foreground"
+                    className="rounded-full border border-border/80 bg-background/30 px-3 py-1 text-xs font-medium text-muted-foreground transition-colors duration-300 group-hover:border-white/15 group-hover:text-foreground"
                   >
                     {tag}
                   </span>
                 ))}
               </div>
 
-              <div className="relative mt-8 flex items-center justify-between border-t border-border/60 pt-5 text-xs sm:text-sm text-muted-foreground">
+              <div className="relative mt-6 flex items-center justify-between border-t border-border/60 pt-4 text-xs text-muted-foreground">
                 <span>{project.extra}</span>
                 <span className="tracking-[0.25em] uppercase">Featured</span>
               </div>
@@ -163,11 +170,11 @@ export const Projects = () => {
             />
 
             <div className="relative z-10 w-full max-w-2xl rounded-[1.75rem] border border-white/10 bg-[#151515] p-5 sm:p-7 shadow-[0_20px_80px_rgba(0,0,0,0.6)] animate-pop-in">
-              <div className="absolute right-4 top-4">
+              <div className="z-50 absolute right-4 top-4">
                 <button
                   type="button"
                   onClick={() => setSelectedProject(null)}
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-muted-foreground transition-colors duration-300 hover:border-white/30 hover:text-foreground"
+                  className="flex h-9 w-9 items-center justify-center text-muted-foreground transition-colors duration-300 hover:border-white/30 hover:text-foreground"
                   aria-label="Close project details"
                 >
                   <span className="text-xl leading-none">×</span>
@@ -182,7 +189,7 @@ export const Projects = () => {
                   {selectedProject.title}
                 </h3>
                 <p className="mt-4 max-w-2xl text-base sm:text-lg leading-8 text-muted-foreground">
-                  {selectedProject.description}
+                  {selectedProject.descriptionExtended || selectedProject.description}
                 </p>
 
                 <div className="mt-8">

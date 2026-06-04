@@ -32,13 +32,13 @@ export const Navbar = () => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 transition-all duration-500 ${
-        isScrolled ? "glass-strong py-3" : "bg-transparent py-5"
+        isScrolled ? "glass-strong py-3" : "bg-transparent py-5 "
       }  z-50`}
     >
       <nav className="container mx-auto px-6 flex items-center justify-between">
         <a
           href="#"
-          className="text-xl font-bold tracking-tight hover:text-primary"
+          className="text-xl font-bold tracking-tight hover:text-primary "
           onClick={closeMobileMenu}
         >
           KC<span className="text-primary">.</span>
@@ -52,7 +52,9 @@ export const Navbar = () => {
                 href={link.href}
                 key={index}
                 onClick={closeMobileMenu}
-                className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground rounded-full hover:bg-surface"
+                className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground 
+                rounded-full hover:bg-surface rounded-full bg-black hover:bg-white/5 
+                transition-all duration-100"
               >
                 {link.label}
               </a>
@@ -60,7 +62,9 @@ export const Navbar = () => {
           </div>
         </div>
 
-        <Button size="sm" onClick={scrollToContact} type="button">
+        <Button size="sm" onClick={scrollToContact} type="button" className="border border-white/50 
+                bg-black hover:bg-white/15 
+                transition-all duration-100">
           Contact Me
         </Button>
 

@@ -2,15 +2,15 @@ export const Skills = () => {
 	const skillRows = [
 		{
 			label: "Frontend",
-			tags: ["TypeScript", "React", "Next.js", "Vite", "Tailwind CSS", "ShadCN", "Framer Motion", "Zod"],
+			tags: ["JavaScript", "React", "Next.js", "Vite", "Tailwind CSS"],
 		},
 		{
 			label: "Backend",
-			tags: ["Node.js", "Express", "Spring Boot", "Java", "Laravel", "Go", "PostgreSQL", "MongoDB", "Redis", "GraphQL", "gRPC", "InfluxDB"],
+			tags: ["Node.js", "Express", "Spring Boot", "Java", "Pythn","PostgreSQL", "MongoDB"],
 		},
 		{
 			label: "Tools & Platform",
-			tags: ["Docker", "Kubernetes", "AWS", "GitHub Actions", "Figma", "Linux"],
+			tags: ["Colab", "Docker", "GitHub"],
 		},
 	];
 

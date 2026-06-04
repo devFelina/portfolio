@@ -40,39 +40,24 @@ export const About = () => {
             </div>
 
             <h2 className="text-4xl md:text-5xl font-bold leading-tight animate-fade-in animation-delay-100 text-secondary-foreground">
-              Building the future,
-              <span className="font-serif italic font-normal text-white">
-                {" "}
-                one component at a time.
-              </span>
+              I build things that think.
             </h2>
 
             <div className="space-y-4 text-muted-foreground animate-fade-in animation-delay-200">
-              <p>
-                I'm a passionate software engineer with over 5 years of
-                experience crafting digital products that make a difference. My
-                journey started with a curiosity for how things work on the web,
-                and it has evolved into a deep expertise in modern frontend
-                technologies.
-              </p>
-              <p>
-                I specialize in React, Next.js, and TypeScript, building
-                everything from sleek landing pages to complex enterprise
-                applications. My approach combines technical excellence with a
-                keen eye for design and user experience.
-              </p>
-              <p>
-                When I'm not coding, you'll find me exploring new technologies,
-                contributing to open-source projects, or sharing knowledge with
-                the developer community.
-              </p>
-            </div>
 
-            <div className="glass rounded-2xl p-6 glow-border animate-fade-in animation-delay-300">
-              <p className="text-lg font-medium italic text-foreground">
-                "My mission is to create digital experiences that are not just
-                functional, but truly delightful — products that users love to
-                use and developers love to maintain."
+              <p>
+                I'm a third-year AI & Data Science undergraduate who builds on both sides of 
+                the stack — AI models that actually work and full-stack products that ship them to users. 
+                Trained transformers, built Flask APIs, deployed React apps, shipped a Chrome extension. 
+                I close the loop.
+              </p>
+              <p> 
+                I work across Python · TensorFlow · Scikit-learn · NLP · OpenAI API on the AI side, 
+                and React · Node.js · Flask · MongoDB · Express on the product side. I don't just study 
+                AI — I apply it to real problems and keep building outside of class.
+              </p>
+              <p>
+                IEEE member · AIESEC member · Open-source contributor · Always learning.
               </p>
             </div>
           </div>

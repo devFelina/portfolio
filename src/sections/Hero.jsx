@@ -29,21 +29,25 @@ const LinkedInIcon = ({ className = "" }) => (
 );
 
 const skills = [
+  "Python",
+  "Java",
+  "JavaScript",
+  "C",
+  "Skit-learn",
+  "TensorFlow",
+  "NLP",
+  "Random Forest",
+  "OpenAI API",
   "React",
   "Next.js",
   "TypeScript",
   "Node.js",
-  "GraphQL",
   "PostgreSQL",
   "MongoDB",
-  "Redis",
   "Docker",
   "AWS",
   "Vercel",
   "Tailwind CSS",
-  "Prisma",
-  "Jest",
-  "Cypress",
   "Figma",
   "Git",
   "GitHub Actions",
@@ -52,12 +56,12 @@ const skills = [
 const socialLinks = [
   {
     label: "GitHub",
-    href: "https://github.com/",
+    href: "https://github.com/devFelina",
     Icon: GitHubIcon,
   },
   {
     label: "LinkedIn",
-    href: "https://www.linkedin.com/",
+    href: "https://www.linkedin.com/in/kushan-chamikara-a24933279/",
     Icon: LinkedInIcon,
   },
 ];
@@ -103,7 +107,7 @@ export const Hero = () => {
           {/* Left Column - Text Content */}
           <div className="space-y-8">
             <div className="animate-fade-in">
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-primary">
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-primary border border-white/10 bg-black hover:bg-white/5 transition-colors duration-300">
                 AI & Data Science • Full-Stack Development
               </span>
             </div>
@@ -114,9 +118,9 @@ export const Hero = () => {
                 Making better world with <span className="text-primary glow-text">AI</span>
               </h1>
               <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
-                Hi, I'm Pedro Machado — a software engineer specializing in
-                React, Next.js, and TypeScript. I build scalable, performant web
-                applications that users love.
+                Hi, I'm Kushan Chamikara — an AI undergraduate at SLIIT. <br />
+                I see patterns in everything around me. <br />
+                I connect data, uncover structure, and turn it into solutions.
               </p>
             </div>
 
@@ -166,7 +170,7 @@ export const Hero = () => {
               <div className="relative glass rounded-3xl p-2 glow-border">
                 <img
                   src="/src/assets/profile-photo.jpg"
-                  alt="Pedro Machado"
+                  alt="Kushan Chamikara"
                   className="w-full aspect-[4/5] object-cover rounded-2xl"
                 />
 
