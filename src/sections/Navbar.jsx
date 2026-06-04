@@ -3,15 +3,21 @@ import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const navLinks = [
+  { href: "#hero", label: "Home" },
   { href: "#about", label: "About" },
   { href: "#projects", label: "Projects" },
-  { href: "#experience", label: "Experience" },
-  { href: "#testimonials", label: "Testimonials" },
+  { href: "#skills", label: "Skills" },
 ];
 
 export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+
+  const closeMobileMenu = () => setIsMobileMenuOpen(false);
+
+  const scrollToContact = () => {
+    document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,17 +39,19 @@ export const Navbar = () => {
         <a
           href="#"
           className="text-xl font-bold tracking-tight hover:text-primary"
+          onClick={closeMobileMenu}
         >
-          PM<span className="text-primary">.</span>
+          KC<span className="text-primary">.</span>
         </a>
 
-        {/* Desktop Nav */}
+        {/* Contact Button */}
         <div className="hidden md:flex items-center gap-1">
           <div className="glass rounded-full px-2 py-1 flex items-center gap-1">
             {navLinks.map((link, index) => (
               <a
                 href={link.href}
                 key={index}
+                onClick={closeMobileMenu}
                 className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground rounded-full hover:bg-surface"
               >
                 {link.label}
@@ -52,10 +60,9 @@ export const Navbar = () => {
           </div>
         </div>
 
-        {/* CTA Button */}
-        <div className="hidden md:block">
-          <Button size="sm">Contact Me</Button>
-        </div>
+        <Button size="sm" onClick={scrollToContact} type="button">
+          Contact Me
+        </Button>
 
         {/* Mobile Menu Button */}
         <button
@@ -74,14 +81,20 @@ export const Navbar = () => {
               <a
                 href={link.href}
                 key={index}
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={closeMobileMenu}
                 className="text-lg text-muted-foreground hover:text-foreground py-2"
               >
                 {link.label}
               </a>
             ))}
 
-            <Button onClick={() => setIsMobileMenuOpen(false)}>
+            <Button
+              onClick={() => {
+                closeMobileMenu();
+                scrollToContact();
+              }}
+              type="button"
+            >
               Contact Me
             </Button>
           </div>

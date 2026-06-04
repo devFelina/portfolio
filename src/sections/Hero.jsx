@@ -63,12 +63,16 @@ const socialLinks = [
 ];
 
 export const Hero = () => {
+  const scrollToProjects = () => {
+    document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <section id="hero" className="relative min-h-screen flex items-center overflow-hidden">
       {/* Bg */}
       <div className="absolute inset-0">
         <img
-          src="/projects/hero-bg-2.jpg"
+          src="/src/assets//hero-bg-2.jpg"
           alt="Hero image"
           className="w-full h-full object-cover opacity-40"
         />
@@ -81,7 +85,7 @@ export const Hero = () => {
           <div
             className="absolute w-1.5 h-1.5 rounded-full opacity-60"
             style={{
-              backgroundColor: "#20B2A6",
+              backgroundColor: "var(--color-primary)",
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
               animation: `slow-drift ${
@@ -118,8 +122,13 @@ export const Hero = () => {
 
             {/* CTAs */}
             <div className="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
-              <Button size="lg">
-                Contact Me <ArrowRight className="w-5 h-5" />
+              <Button
+                size="lg"
+                onClick={scrollToProjects}
+                type="button"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-black bg-white hover:bg-white/90"
+              >
+                View Projects <ArrowRight className="w-5 h-5" />
               </Button>
               <AnimatedBorderButton>
                 <Download className="w-5 h-5" />
@@ -156,7 +165,7 @@ export const Hero = () => {
               />
               <div className="relative glass rounded-3xl p-2 glow-border">
                 <img
-                  src="/projects/profile-photo.jpg"
+                  src="/src/assets/profile-photo.jpg"
                   alt="Pedro Machado"
                   className="w-full aspect-[4/5] object-cover rounded-2xl"
                 />
