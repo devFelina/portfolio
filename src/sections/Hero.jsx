@@ -1,4 +1,7 @@
 import { Button } from "@/components/Button";
+import profileImg from '../assets/profile-photo.jpg';
+import heroBgImg from '../assets/hero-bg-2.jpg'; 
+
 import {
   ArrowRight,
   ChevronDown,
@@ -76,7 +79,7 @@ export const Hero = () => {
       {/* Bg */}
       <div className="absolute inset-0">
         <img
-          src="/src/assets//hero-bg-2.jpg"
+          src={heroBgImg} // 2. Updated from string literal to the imported variable
           alt="Hero image"
           className="w-full h-full object-cover opacity-40"
         />
@@ -87,6 +90,7 @@ export const Hero = () => {
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(30)].map((_, i) => (
           <div
+            key={i}
             className="absolute w-1.5 h-1.5 rounded-full opacity-60"
             style={{
               backgroundColor: "var(--color-primary)",
@@ -169,7 +173,7 @@ export const Hero = () => {
               />
               <div className="relative glass rounded-3xl p-2 glow-border">
                 <img
-                  src="/src/assets/profile-photo.jpg"
+                  src={profileImg} // 3. Updated from string literal to the imported variable
                   alt="Kushan Chamikara"
                   className="w-full aspect-[4/5] object-cover rounded-2xl"
                 />
