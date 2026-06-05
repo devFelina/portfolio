@@ -2,7 +2,7 @@
 
 Welcome to my personal portfolio website repository! This is a modern, responsive single-page web application showcasing my background as an AI undergraduate, my technical skills, and my featured projects. 
 
-Live Preview: [Insert your live portfolio link here, e.g., GitHub Pages URL]
+Live Preview: [https://devfelina.github.io/portfolio/#]
 
 ---
 
@@ -36,8 +36,9 @@ Make sure you have Node.js installed. Check your installation by running:
 node -v
 npm -v
 
+```
 Installation & Local Setup
-
+```bash
 1. Clone the Repository
 
 git clone [https://github.com/devFelina/kc-portfolio.git](https://github.com/devFelina/kc-portfolio.git)
