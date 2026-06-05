@@ -44,7 +44,7 @@ export const Navbar = () => {
           KC<span className="text-primary">.</span>
         </a>
 
-        {/* Contact Button */}
+        {/* Desktop Navigation Links */}
         <div className="hidden md:flex items-center gap-1">
           <div className="glass rounded-full px-2 py-1 flex items-center gap-1">
             {navLinks.map((link, index) => (
@@ -53,7 +53,7 @@ export const Navbar = () => {
                 key={index}
                 onClick={closeMobileMenu}
                 className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground 
-                rounded-full hover:bg-surface rounded-full bg-black hover:bg-white/5 
+                rounded-full hover:bg-surface bg-black hover:bg-white/5 
                 transition-all duration-100"
               >
                 {link.label}
@@ -62,9 +62,15 @@ export const Navbar = () => {
           </div>
         </div>
 
-        <Button size="sm" onClick={scrollToContact} type="button" className="border border-white/50 
+        {/* Desktop Contact Button (Hidden on Mobile) */}
+        <Button 
+          size="sm" 
+          onClick={scrollToContact} 
+          type="button" 
+          className="hidden md:inline-flex border border-white/50 
                 bg-black hover:bg-white/15 
-                transition-all duration-100">
+                transition-all duration-100"
+        >
           Contact Me
         </Button>
 

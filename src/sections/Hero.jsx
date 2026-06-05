@@ -1,6 +1,6 @@
 import { Button } from "@/components/Button";
-import profileImg from '../assets/profile-photo.jpg';
-import heroBgImg from '../assets/hero-bg-2.jpg'; 
+import profileImg from '../assets/profile-photo.webp';
+import heroBgImg from '../assets/hero-bg-2.webp'; 
 
 import {
   ArrowRight,
@@ -74,6 +74,15 @@ export const Hero = () => {
     document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const handleDownloadCV = () => {
+    const link = document.createElement("a");
+    link.href = `${import.meta.env.BASE_URL}Kushan_Chamikara_Resume.pdf`; // Points directly to public folder
+    link.download = "Kushan_Chamikara_Resume.pdf"; // Suggests this filename on download
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <section id="hero" className="relative min-h-screen flex items-center overflow-hidden">
       {/* Bg */}
@@ -138,7 +147,7 @@ export const Hero = () => {
               >
                 View Projects <ArrowRight className="w-5 h-5" />
               </Button>
-              <AnimatedBorderButton>
+              <AnimatedBorderButton onClick={handleDownloadCV}>
                 <Download className="w-5 h-5" />
                 Download CV
               </AnimatedBorderButton>
