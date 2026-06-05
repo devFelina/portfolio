@@ -39,20 +39,13 @@ npm -v
 ```
 Installation & Local Setup
 ```bash
-1. Clone the Repository
 
 git clone [https://github.com/devFelina/kc-portfolio.git](https://github.com/devFelina/kc-portfolio.git)
 
 cd kc-portfolio
 
-2. Install Project Dependencies
-
 npm install
 
-3. Launch the Development Server
-
 npm run dev
-
-4. Build for Production
 
 npm run build
