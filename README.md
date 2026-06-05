@@ -1,19 +1,57 @@
-# React + Vite
+# 🚀 Kushan Chamikara - AI & Full-Stack Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my personal portfolio website repository! This is a modern, responsive single-page web application showcasing my background as an AI undergraduate, my technical skills, and my featured projects. 
 
-Currently, two official plugins are available:
+Live Preview: [Insert your live portfolio link here, e.g., GitHub Pages URL]
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## ✨ Features & Enhancements
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* **Dynamic Navigation**: Implements a sleek, translucent glassmorphism navigation bar that changes styles on scroll (`Navbar.jsx`). Includes a responsive mobile hamburger menu configuration where the key CTAs tuck away cleanly into the drawer.
+* **Interactive Hero Layout**: Includes a professional layout featuring smooth-drift custom background animations, responsive imagery layouts, and structured text summaries.
+* **Seamless Media & CV Download**: Features a customized `<AnimatedBorderButton>` equipped with dynamic SVG border drawing paths and custom props forwarding. Triggers clean programmatic resume downloads pulling straight from a custom sub-directory base path (`/portfolio/`).
+* **Global Scroll-To-Top Facility**: Integrates a layout-level sticky floating action button (`ScrollToTop.jsx`) wrapped globally at the root layout tree (`App.jsx`). Listens to scroll position thresholds and features clean UI translate/fade micro-interactions.
+* **Infinite Tech Stack Marquee**: Includes a CSS-driven infinite horizontal marquee tracking core specialized frameworks across Machine Learning, AI APIs, Frontend, and Backend structures.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Built With
 
+* **Frontend Framework**: [React](https://react.dev/) + [Vite](https://vite.dev/) (Optimized Fast HMR Template)
+* **Styling Framework**: [Tailwind CSS](https://tailwindcss.com/)
+* **Icon Set**: [Lucide React](https://lucide.dev/)
+* **Languages**: JavaScript, HTML5, CSS3
 
-Here update readme
+---
+
+## 🚀 Getting Started
+
+Follow these steps to run the portfolio project locally on your machine.
+
+### Prerequisites
+
+Make sure you have Node.js installed. Check your installation by running:
+```bash
+node -v
+npm -v
+
+Installation & Local Setup
+
+1. Clone the Repository
+
+git clone [https://github.com/devFelina/kc-portfolio.git](https://github.com/devFelina/kc-portfolio.git)
+
+cd kc-portfolio
+
+2. Install Project Dependencies
+
+npm install
+
+3. Launch the Development Server
+
+npm run dev
+
+4. Build for Production
+
+npm run build
