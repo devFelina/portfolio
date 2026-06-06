@@ -5,6 +5,7 @@ import { Projects } from "@/sections/Projects";
 import { Skills } from "@/sections/Skills";
 import { Contact } from "@/sections/Contact";
 import { ScrollToTop } from "./components/ScrollToTop";
+import { LoadingReveal } from "./components/LoadingReveal";
 
 function App() {
 
@@ -12,6 +13,7 @@ function App() {
     <div className="min-h-screen overflow-x-hidden">
       <Navbar />
       <main>
+        <LoadingReveal />
         <Hero />
         <About />
         <Projects />
