@@ -60,6 +60,16 @@ const projects = [
   },
   {
     year: "2026",
+    title: "LangChain-RAG-ChatBot",
+    description:
+      "This LangChain-RAG-ChatBot integrates Retrieval-Augmented Generation (RAG) with LangChain to create a powerful conversational AI system.",
+    descriptionExtended:"A conversational question-answering chatbot built with LangChain using a Retrieval-Augmented Generation (RAG) architecture. This project demonstrates how to combine document embeddings, a vector store, and a language model to answer user queries using relevant external content.",
+    tags: ["Python", "LangChain", "GeminiAPI", "RAG"],
+    url: "https://github.com/devFelina/LangChain-RAG-ChatBot",
+    githubUrl: "https://github.com/devFelina/LangChain-RAG-ChatBot",
+  },
+   {
+    year: "2026",
     title: "Class Management System",
     description:
       "This Class Management System provides a clean web-based portal for administrators to easily handle full CRUD operations for managing students, tutors, and courses.",
