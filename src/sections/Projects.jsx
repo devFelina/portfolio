@@ -22,7 +22,7 @@ const projects = [
       "Built in Python using real-world car data of over 10,000 rows, this system trains a Scikit-learn Random Forest Regressor combined with a custom Pandas rule-based layer that targets premium trims for enhanced pricing accuracy. The entire pipeline—complete with engineered features like usage intensity and performance metrics (MAE / R^2)—is serialized into a .pkl file via Joblib for seamless deployment and live depreciation simulations.",
     tags: ["Python", "Pandas", "Scikit-learn", "Joblib"],
     extra: "",
-    url: "https://github.com/devFelina/car-price-predictor",
+    url: "https://car-price-predictor-live-frontend.onrender.com",
     githubUrl: "https://github.com/devFelina/car-price-predictor",
   },
   {
