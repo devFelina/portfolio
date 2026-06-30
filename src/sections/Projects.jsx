@@ -68,6 +68,17 @@ const projects = [
     url: "https://github.com/devFelina/LangChain-RAG-ChatBot",
     githubUrl: "https://github.com/devFelina/LangChain-RAG-ChatBot",
   },
+    {
+    year: "2026",
+    title: "Sri Lanka Dengue Surveillance Dashboard",
+    description:
+      "The dashboard helps users explore weekly dengue reports using interactive visualisations and district-level analytics.",
+    descriptionExtended:"A web-based dashboard for visualizing and analyzing dengue surveillance data in Sri Lanka. The application provides interactive charts and maps to help public health officials monitor disease spread and allocate resources effectively.",
+    tags: ["TypeScript", "React.js","Vite"],
+    extra: "",
+    url: "https://devfelina.github.io/Sri-Lanka-Dengue-Stat/",
+    githubUrl: "https://github.com/devFelina/Sri-Lanka-Dengue-Stat",
+  },
    {
     year: "2026",
     title: "Class Management System",
