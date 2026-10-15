@@ -1,87 +1,40 @@
 import { Code2, Lightbulb, Rocket, Users } from "lucide-react";
 
 const highlights = [
-  {
-    icon: Code2,
-    title: "Clean Code",
-    description:
-      "Writing maintainable, scalable code that stands the test of time.",
-  },
-  {
-    icon: Rocket,
-    title: "Performance",
-    description:
-      "Optimizing for speed and delivering lightning-fast user experiences.",
-  },
-  {
-    icon: Users,
-    title: "Collaboration",
-    description: "Working closely with teams to bring ideas to life.",
-  },
-  {
-    icon: Lightbulb,
-    title: "Innovation",
-    description:
-      "Staying ahead with the latest technologies and best practices.",
-  },
+  { icon: Lightbulb, title: "Applied AI", description: "Building machine-learning and language-model workflows around practical product needs." },
+  { icon: Rocket, title: "Full-Stack Delivery", description: "Connecting interfaces, APIs, and data into complete applications people can use." },
+  { icon: Code2, title: "Clean Engineering", description: "Writing maintainable code with a focus on clarity, performance, and reliable behavior." },
+  { icon: Users, title: "Collaboration", description: "Working with communities and teams while continuing to learn, share, and improve." },
 ];
 
-export const About = () => {
-  return (
-    <section id="about" className="py-32 relative overflow-hidden">
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left Column */}
-          <div className="space-y-8">
-            <div className="animate-fade-in">
-              <span className="text-secondary-foreground text-sm font-medium tracking-wider uppercase">
-                About Me
-              </span>
-            </div>
+export const About = () => (
+  <section id="about" className="relative overflow-hidden py-28 sm:py-32">
+    <div className="pointer-events-none absolute left-1/2 top-0 h-px w-[min(88%,80rem)] -translate-x-1/2 bg-gradient-to-r from-transparent via-border-strong to-transparent" aria-hidden="true" />
+    <div className="container relative z-10 mx-auto px-6">
+      <div className="mb-14 max-w-3xl sm:mb-16">
+        <span className="text-xs font-medium uppercase tracking-[0.2em] text-accent sm:text-sm">About Me</span>
+        <h2 className="mt-5 text-4xl font-bold leading-tight tracking-[-0.03em] text-foreground sm:text-5xl lg:text-6xl">Building across AI and product.</h2>
+      </div>
 
-            <h2 className="text-4xl md:text-5xl font-bold leading-tight animate-fade-in animation-delay-100 text-secondary-foreground">
-              I build things that think.
-            </h2>
+      <div className="grid gap-14 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-20 xl:gap-28">
+        <div className="space-y-5 text-base leading-8 text-secondary-foreground sm:text-lg">
+          <p>I&apos;m Kushan Chamikara, a third-year AI &amp; Data Science undergraduate focused on turning models and ideas into useful software.</p>
+          <p>My work spans machine-learning pipelines, APIs, databases, and React interfaces. I enjoy closing the gap between technical experiments and complete products that can be deployed and used.</p>
+          <p className="text-sm font-medium leading-7 text-muted-foreground sm:text-base">IEEE member · AIESEC member · Open-source contributor · Always learning</p>
+        </div>
 
-            <div className="space-y-4 text-muted-foreground animate-fade-in animation-delay-200">
-
-              <p>
-                I'm a third-year AI & Data Science undergraduate who builds on both sides of 
-                the stack — AI models that actually work and full-stack products that ship them to users. 
-                Trained transformers, built Flask APIs, deployed React apps, shipped a Chrome extension. 
-                I close the loop.
-              </p>
-              <p> 
-                I work across Python · TensorFlow · Scikit-learn · NLP · OpenAI API on the AI side, 
-                and React · Node.js · Flask · MongoDB · Express on the product side. I don't just study 
-                AI — I apply it to real problems and keep building outside of class.
-              </p>
-              <p>
-                IEEE member · AIESEC member · Open-source contributor · Always learning.
-              </p>
-            </div>
-          </div>
-
-          {/* Right Column - Hilights */}
-          <div className="grid sm:grid-cols-2 gap-6">
-            {highlights.map((item, idx) => (
-              <div
-                key={idx}
-                className="glass p-6 rounded-2xl animate-fade-in"
-                style={{ animationDelay: `${(idx + 1) * 100}ms` }}
-              >
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 hover:bg-primary/20">
-                  <item.icon className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
-                <p className="text-sm text-muted-foreground">
-                  {item.description}
-                </p>
+        <div className="grid gap-4 sm:grid-cols-2 sm:gap-5">
+          {highlights.map((item) => (
+            <article key={item.title} className="rounded-3xl border border-border bg-surface/65 p-6 transition-[border-color,background-color] duration-200 hover:border-border-strong hover:bg-surface">
+              <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl border border-border bg-background-elevated">
+                <item.icon className="h-5 w-5 text-accent" aria-hidden="true" />
               </div>
-            ))}
-          </div>
+              <h3 className="text-lg font-semibold text-foreground">{item.title}</h3>
+              <p className="mt-2 text-sm leading-6 text-muted-foreground">{item.description}</p>
+            </article>
+          ))}
         </div>
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
