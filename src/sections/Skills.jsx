@@ -6,7 +6,7 @@ export const Skills = () => {
 		},
 		{
 			label: "Backend",
-			tags: ["Node.js", "Express", "Spring Boot", "Java", "Pythn","PostgreSQL", "MongoDB"],
+			tags: ["Node.js", "Express", "Spring Boot", "Java", "Python", "PostgreSQL", "MongoDB"],
 		},
 		{
 			label: "Tools & Platform",

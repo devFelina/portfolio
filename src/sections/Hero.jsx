@@ -36,7 +36,7 @@ const skills = [
   "Java",
   "JavaScript",
   "C",
-  "Skit-learn",
+  "Scikit-learn",
   "TensorFlow",
   "NLP",
   "Random Forest",
@@ -69,6 +69,13 @@ const socialLinks = [
   },
 ];
 
+const heroDots = Array.from({ length: 30 }, (_, index) => ({
+  left: `${(index * 37 + 11) % 100}%`,
+  top: `${(index * 53 + 7) % 100}%`,
+  duration: `${15 + ((index * 7) % 20)}s`,
+  delay: `${(index * 3) % 5}s`,
+}));
+
 export const Hero = () => {
   const scrollToProjects = () => {
     document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" });
@@ -97,18 +104,16 @@ export const Hero = () => {
 
       {/* Green Dots */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(30)].map((_, i) => (
+        {heroDots.map((dot, i) => (
           <div
             key={i}
             className="absolute w-1.5 h-1.5 rounded-full opacity-60"
             style={{
               backgroundColor: "var(--color-primary)",
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animation: `slow-drift ${
-                15 + Math.random() * 20
-              }s ease-in-out infinite`,
-              animationDelay: `${Math.random() * 5}s`,
+              left: dot.left,
+              top: dot.top,
+              animation: `slow-drift ${dot.duration} ease-in-out infinite`,
+              animationDelay: dot.delay,
             }}
           />
         ))}
@@ -171,7 +176,7 @@ export const Hero = () => {
             </div>
           </div>
           {/* Right Column - Profile Image */}
-          <div className="relatice animate-fade-in animation-delay-300">
+          <div className="relative animate-fade-in animation-delay-300">
             {/* Profile Image */}
             <div className="relative max-w-sm mx-auto">
               <div
