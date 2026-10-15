@@ -23,17 +23,30 @@ export const heroSkills = [
   "GitHub Actions",
 ];
 
-export const skillRows = [
+export const skillCategories = [
   {
-    label: "Frontend",
-    technologies: ["JavaScript", "React", "Next.js", "Vite", "Tailwind CSS"],
+    id: "frontend",
+    label: "Frontend Development",
+    technologies: ["React", "JavaScript", "TypeScript", "Next.js", "Tailwind CSS", "Vite"],
   },
   {
-    label: "Backend",
-    technologies: ["Node.js", "Express", "Spring Boot", "Java", "Python", "PostgreSQL", "MongoDB"],
+    id: "backend",
+    label: "Backend Development",
+    technologies: ["Node.js", "Express.js", "ASP.NET Core", "Python", "FastAPI", "Flask", "Java", "Spring Boot"],
   },
   {
-    label: "Tools & Platform",
-    technologies: ["Colab", "Docker", "GitHub"],
+    id: "ai-ml",
+    label: "AI & Machine Learning",
+    technologies: ["Python", "Scikit-learn", "TensorFlow", "Pandas", "LangChain", "RAG", "OpenAI API", "Hugging Face", "NLP"],
+  },
+  {
+    id: "databases",
+    label: "Databases",
+    technologies: ["PostgreSQL", "MongoDB", "MySQL", "SQLite", "Supabase"],
+  },
+  {
+    id: "tools",
+    label: "Developer Tools & Platforms",
+    technologies: ["Git", "GitHub", "Docker", "AWS", "Vercel", "GitHub Actions", "Figma", "Colab"],
   },
 ];

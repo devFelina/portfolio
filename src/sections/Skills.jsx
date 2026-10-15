@@ -1,53 +1,48 @@
-import { skillRows } from "@/data/skills";
+import { BrainCircuit, Code2, Database, Server, Wrench } from "lucide-react";
+import { skillCategories } from "@/data/skills";
 
-export const Skills = () => {
-	return (
-		<section id="skills" className="py-28 sm:py-32 relative overflow-hidden">
-			<div className="absolute inset-0 -z-10">
-				<div className="absolute left-[-6rem] top-[-6rem] h-72 w-72 rounded-full bg-white/5 blur-3xl" />
-				<div className="absolute right-[-8rem] bottom-[-6rem] h-80 w-80 rounded-full bg-white/4 blur-3xl" />
-			</div>
-
-			<div className="container mx-auto px-6 relative z-10">
-				<div className="max-w-3xl mb-16 animate-fade-in">
-					<span className="text-xs sm:text-sm font-semibold tracking-[0.35em] uppercase text-primary/80">
-						Skills
-					</span>
-					<h2 className="mt-5 text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-foreground">
-						The toolkit.
-					</h2>
-					<p className="mt-5 max-w-2xl text-base sm:text-lg leading-8 text-muted-foreground">
-						A working set of tools I reach for. I care more about the right answer than the trendy one.
-					</p>
-				</div>
-
-				<div className="space-y-0">
-					{skillRows.map((row, rowIndex) => (
-						<div
-							key={row.label}
-							className={`grid gap-6 py-7 sm:py-8 lg:grid-cols-[220px_minmax(0,1fr)] items-start ${
-								rowIndex === 0 ? "border-t border-white/10" : "border-t border-white/10"
-							} animate-fade-in`}
-							style={{ animationDelay: `${(rowIndex + 1) * 90}ms` }}
-						>
-							<div className="text-xl sm:text-2xl font-semibold text-foreground">
-								{row.label}
-							</div>
-
-							<div className="flex flex-wrap gap-3 sm:gap-3.5">
-								{row.technologies.map((tag) => (
-									<span
-										key={tag}
-										className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm sm:text-[0.95rem] font-medium text-muted-foreground transition-all duration-300 hover:border-white/20 hover:bg-white/10 hover:text-foreground"
-									>
-										{tag}
-									</span>
-								))}
-							</div>
-						</div>
-					))}
-				</div>
-			</div>
-		</section>
-	);
+const categoryIcons = {
+  frontend: Code2,
+  backend: Server,
+  "ai-ml": BrainCircuit,
+  databases: Database,
+  tools: Wrench,
 };
+
+export const Skills = () => (
+  <section id="skills" className="relative overflow-hidden py-28 sm:py-32">
+    <div className="pointer-events-none absolute inset-0 -z-10" aria-hidden="true">
+      <div className="absolute -left-32 top-20 h-80 w-80 rounded-full bg-accent/[0.04] blur-3xl" />
+      <div className="absolute -right-32 bottom-0 h-96 w-96 rounded-full bg-white/[0.03] blur-3xl" />
+    </div>
+
+    <div className="container relative z-10 mx-auto px-6">
+      <div className="mb-14 max-w-3xl sm:mb-16">
+        <span className="text-xs font-medium uppercase tracking-[0.2em] text-accent sm:text-sm">Technical Skills</span>
+        <h2 className="mt-5 text-4xl font-bold leading-tight tracking-[-0.03em] text-foreground sm:text-5xl lg:text-6xl">Tools for building complete systems.</h2>
+        <p className="mt-5 max-w-2xl text-base leading-8 text-secondary-foreground sm:text-lg">A practical toolkit developed through AI, data, and full-stack projects—from interface design to deployment.</p>
+      </div>
+
+      <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+        {skillCategories.map((category) => {
+          const Icon = categoryIcons[category.id];
+          return (
+            <article key={category.id} className="rounded-3xl border border-border bg-surface/65 p-6 transition-[border-color,background-color,transform] duration-200 hover:-translate-y-0.5 hover:border-border-strong hover:bg-surface sm:p-7">
+              <div className="flex items-start gap-4">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-border bg-background-elevated">
+                  <Icon className="h-5 w-5 text-accent" aria-hidden="true" />
+                </div>
+                <h3 className="pt-1.5 text-xl font-semibold leading-7 text-foreground">{category.label}</h3>
+              </div>
+              <ul className="mt-6 flex flex-wrap gap-2" aria-label={`${category.label} technologies`}>
+                {category.technologies.map((technology) => (
+                  <li key={technology} className="rounded-full border border-border bg-background/60 px-3 py-1.5 text-sm font-medium text-secondary-foreground">{technology}</li>
+                ))}
+              </ul>
+            </article>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+);
