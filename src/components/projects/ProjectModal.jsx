@@ -10,6 +10,7 @@ export const ProjectModal = ({ project, onClose, returnFocusRef }) => {
   const titleId = useId();
   const hasLiveDemo =
     project.liveUrl && project.liveUrl !== project.repositoryUrl;
+  const projectType = project.projectType?.join(" · ");
 
   useEffect(() => {
     const dialog = dialogRef.current;
@@ -79,6 +80,12 @@ export const ProjectModal = ({ project, onClose, returnFocusRef }) => {
               <span>{project.year}</span>
             </div>
 
+            {projectType && (
+              <p className="mt-3 text-xs font-semibold uppercase tracking-[0.2em] text-accent">
+                {projectType}
+              </p>
+            )}
+
             <h2
               id={titleId}
               className="mt-4 max-w-3xl pr-10 text-3xl font-bold leading-tight text-foreground sm:text-4xl"
@@ -109,6 +116,36 @@ export const ProjectModal = ({ project, onClose, returnFocusRef }) => {
               </div>
             </section>
 
+            {project.features?.length > 0 && (
+              <section className="mt-8" aria-labelledby={`${titleId}-features`}>
+                <h3
+                  id={`${titleId}-features`}
+                  className="text-xs font-semibold uppercase tracking-[0.3em] text-muted-foreground"
+                >
+                  Core features
+                </h3>
+                <ul className="mt-4 grid gap-3 text-sm leading-6 text-secondary-foreground sm:grid-cols-2">
+                  {project.features.map((feature) => (
+                    <li key={feature} className="flex gap-3">
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden="true" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )}
+
+            {project.context && (
+              <div className="mt-8 rounded-2xl border border-border bg-background/35 p-4 sm:p-5">
+                <p className="text-xs font-semibold uppercase tracking-[0.3em] text-muted-foreground">
+                  Context
+                </p>
+                <p className="mt-3 text-sm leading-6 text-secondary-foreground">
+                  {project.context}
+                </p>
+              </div>
+            )}
+
             {project.role && (
               <div className="mt-8">
                 <p className="text-xs font-semibold uppercase tracking-[0.3em] text-muted-foreground">
@@ -124,7 +161,7 @@ export const ProjectModal = ({ project, onClose, returnFocusRef }) => {
                   <LinkButton
                     href={project.liveUrl}
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                     aria-label={`Open live demo for ${project.title}`}
                   >
                     Live Demo
@@ -136,7 +173,7 @@ export const ProjectModal = ({ project, onClose, returnFocusRef }) => {
                   <LinkButton
                     href={project.repositoryUrl}
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                     variant="secondary"
                     aria-label={`Open GitHub repository for ${project.title}`}
                   >

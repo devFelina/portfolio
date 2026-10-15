@@ -6,6 +6,7 @@ import { ProjectMedia } from "./ProjectMedia";
 export const ProjectCard = ({ project, featured = false, onViewDetails }) => {
   const hasLiveDemo =
     project.liveUrl && project.liveUrl !== project.repositoryUrl;
+  const projectType = project.projectType?.join(" · ");
 
   return (
     <article
@@ -31,8 +32,14 @@ export const ProjectCard = ({ project, featured = false, onViewDetails }) => {
           )}
         </div>
 
+        {projectType && (
+          <p className="mt-3 text-xs font-medium uppercase tracking-[0.16em] text-secondary-foreground">
+            {projectType}
+          </p>
+        )}
+
         <h3
-          className={`mt-4 font-semibold leading-tight text-foreground ${
+          className={`${projectType ? "mt-2" : "mt-4"} font-semibold leading-tight text-foreground ${
             featured ? "text-2xl sm:text-3xl" : "text-xl sm:text-2xl"
           }`}
         >
@@ -68,7 +75,7 @@ export const ProjectCard = ({ project, featured = false, onViewDetails }) => {
             <LinkButton
               href={project.liveUrl}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               variant="ghost"
               size="sm"
               className="border border-border px-4"
@@ -83,7 +90,7 @@ export const ProjectCard = ({ project, featured = false, onViewDetails }) => {
             <LinkButton
               href={project.repositoryUrl}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               variant="ghost"
               size="icon"
               className="border border-border"

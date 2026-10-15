@@ -5,10 +5,13 @@ import { projects } from "@/data/projects";
 import { useCallback, useMemo, useRef, useState } from "react";
 
 // Presentation-only selection. This does not change factual `featured` metadata.
-const showcaseProjectIds = new Set([
+const showcaseProjectIds = [
+  "ai-house-planner",
+  "fenceguard-lk",
   "car-price-prediction-system",
   "car-dealership-mern-application",
-]);
+];
+const showcaseProjectIdSet = new Set(showcaseProjectIds);
 
 const technologyFilters = [
   { id: "all", label: "All", technologies: null },
@@ -46,11 +49,13 @@ export const Projects = () => {
     [activeFilter],
   );
 
-  const showcaseProjects = filteredProjects.filter((project) =>
-    showcaseProjectIds.has(project.id),
-  );
+  const showcaseProjects = showcaseProjectIds
+    .map((projectId) =>
+      filteredProjects.find((project) => project.id === projectId),
+    )
+    .filter(Boolean);
   const standardProjects = filteredProjects.filter(
-    (project) => !showcaseProjectIds.has(project.id),
+    (project) => !showcaseProjectIdSet.has(project.id),
   );
 
   const openProject = useCallback((project, trigger) => {

@@ -15,7 +15,7 @@ export const ProjectMedia = ({ project, featured = false }) => {
       <div className={`${aspectClass} overflow-hidden bg-background-elevated`}>
         <img
           src={project.image}
-          alt={`${project.title} project screenshot`}
+          alt={project.imageAlt || `${project.title} interface screenshot`}
           loading="lazy"
           decoding="async"
           className="h-full w-full object-cover transition-transform duration-200 group-hover:scale-[1.02]"
