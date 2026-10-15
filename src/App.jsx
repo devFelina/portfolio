@@ -7,7 +7,6 @@ import { Skills } from "@/sections/Skills";
 import { Contact } from "@/sections/Contact";
 import { Footer } from "@/sections/Footer";
 import { ScrollToTop } from "./components/ScrollToTop";
-import { LoadingReveal } from "./components/LoadingReveal";
 
 function App() {
 
@@ -21,7 +20,6 @@ function App() {
       </a>
       <Navbar />
       <main id="main-content" tabIndex={-1}>
-        <LoadingReveal />
         <Hero />
         <About />
         <Projects />

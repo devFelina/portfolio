@@ -42,6 +42,8 @@ dist-ssr
 # Test output
 coverage/
 .nyc_output/
+playwright-report/
+test-results/
 
 # Misc caches and logs
 .eslintcache
