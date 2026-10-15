@@ -7,14 +7,18 @@ export const ProjectCard = ({ project, featured = false, onViewDetails }) => {
   const hasLiveDemo =
     project.liveUrl && project.liveUrl !== project.repositoryUrl;
   const projectType = project.projectType?.join(" · ");
+  const technologyLimit = featured ? 6 : 4;
+  const visibleTechnologies = project.technologies.slice(0, technologyLimit);
+  const remainingTechnologyCount =
+    project.technologies.length - visibleTechnologies.length;
 
   return (
     <article
-      className={`group flex h-full min-w-0 flex-col overflow-hidden border border-border bg-card/80 transition-[transform,border-color,background-color,box-shadow] duration-200 hover:-translate-y-1 hover:border-border-strong hover:bg-surface-hover hover:shadow-[0_20px_60px_rgba(0,0,0,0.28)] focus-within:border-border-strong ${
+      className={`group flex h-full min-w-0 flex-col overflow-hidden border border-border bg-card/80 transition-[transform,border-color,background-color,box-shadow] duration-200 hover:-translate-y-1 hover:border-border-strong hover:bg-surface-hover hover:shadow-[0_20px_60px_rgba(0,0,0,0.28)] focus-within:border-accent/50 focus-within:ring-1 focus-within:ring-accent/30 ${
         featured ? "rounded-[2rem]" : "rounded-[1.5rem]"
       }`}
     >
-      <ProjectMedia project={project} featured={featured} />
+      <ProjectMedia project={project} />
 
       <div className={`flex flex-1 flex-col ${featured ? "p-6 sm:p-8" : "p-5 sm:p-6"}`}>
         <div className="flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">
@@ -50,18 +54,26 @@ export const ProjectCard = ({ project, featured = false, onViewDetails }) => {
           {project.summary}
         </p>
 
-        <div className="mt-5 flex flex-wrap gap-2">
-          {project.technologies.map((technology) => (
-            <span
+        <ul
+          className="mt-5 flex flex-wrap gap-2"
+          aria-label={`${project.title} technologies`}
+        >
+          {visibleTechnologies.map((technology) => (
+            <li
               key={technology}
               className="rounded-full border border-border bg-background/35 px-3 py-1 text-xs font-medium text-muted-foreground"
             >
               {technology}
-            </span>
+            </li>
           ))}
-        </div>
+          {remainingTechnologyCount > 0 && (
+            <li className="rounded-full border border-border bg-background/35 px-3 py-1 text-xs font-medium text-secondary-foreground">
+              +{remainingTechnologyCount} more
+            </li>
+          )}
+        </ul>
 
-        <div className="mt-auto flex flex-wrap items-center gap-2 border-t border-border pt-6">
+        <div className="mt-auto flex flex-wrap items-center gap-2 border-t border-border pt-5">
           <button
             type="button"
             onClick={(event) => onViewDetails(project, event.currentTarget)}

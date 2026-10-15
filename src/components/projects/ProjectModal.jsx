@@ -71,7 +71,7 @@ export const ProjectModal = ({ project, onClose, returnFocusRef }) => {
         </button>
 
         <div className="overflow-y-auto overscroll-contain">
-          <ProjectMedia project={project} featured />
+          <ProjectMedia project={project} modal />
 
           <div className="p-5 sm:p-8 lg:p-10">
             <div className="flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-[0.24em] text-muted-foreground">
