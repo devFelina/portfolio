@@ -5,37 +5,53 @@ export const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    let animationFrame = 0;
+
     const toggleVisibility = () => {
-      // Show button when user scrolls down past 300px
-      if (window.scrollY > 300) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
+      if (!animationFrame) {
+        animationFrame = window.requestAnimationFrame(() => {
+          animationFrame = 0;
+          const visibilityThreshold = Math.max(500, window.innerHeight * 0.75);
+          setIsVisible(window.scrollY > visibilityThreshold);
+        });
       }
     };
 
-    window.addEventListener("scroll", toggleVisibility);
-    return () => window.removeEventListener("scroll", toggleVisibility);
+    toggleVisibility();
+    window.addEventListener("scroll", toggleVisibility, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", toggleVisibility);
+      if (animationFrame) window.cancelAnimationFrame(animationFrame);
+    };
   }, []);
 
-  const scrollToHero = () => {
-    document.querySelector("#hero")?.scrollIntoView({ behavior: "smooth" });
+  const scrollToTop = () => {
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: prefersReducedMotion ? "auto" : "smooth",
+    });
   };
+
+  if (!isVisible) return null;
 
   return (
     <button
-      onClick={scrollToHero}
-      className={`fixed bottom-6 right-6 z-50 p-3 rounded-full glass 
-      text-foreground border border-white/10 bg-black/40 hover:bg-white/10 
-      transition-all duration-300 hover:-translate-y-1 hover:text-primary hover:border-primary/50
-      ${
-        isVisible 
-          ? "opacity-100 translate-y-0 pointer-events-auto" 
-          : "opacity-0 translate-y-4 pointer-events-none"
-      }`}
+      type="button"
+      onClick={scrollToTop}
+      className="fixed z-40 flex h-11 w-11 items-center justify-center rounded-full border border-border bg-background/80 text-foreground shadow-xl shadow-black/30 backdrop-blur-xl transition-colors duration-200 hover:border-border-strong hover:bg-surface-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+      style={{
+        bottom: "calc(1rem + env(safe-area-inset-bottom))",
+        right: "calc(1rem + env(safe-area-inset-right))",
+      }}
       aria-label="Scroll to top"
     >
-      <ArrowUp className="w-6 h-6" />
+      <ArrowUp className="h-5 w-5" aria-hidden="true" />
     </button>
   );
 };
