@@ -5,6 +5,7 @@ import { Projects } from "@/sections/Projects";
 import { Experience } from "@/sections/Experience";
 import { Skills } from "@/sections/Skills";
 import { Contact } from "@/sections/Contact";
+import { Footer } from "@/sections/Footer";
 import { ScrollToTop } from "./components/ScrollToTop";
 import { LoadingReveal } from "./components/LoadingReveal";
 
@@ -29,6 +30,7 @@ function App() {
         <Contact />
         <ScrollToTop />
       </main>
+      <Footer />
     </div>
   )
 }
