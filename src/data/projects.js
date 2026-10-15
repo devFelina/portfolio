@@ -1,3 +1,8 @@
+import aiHousePlannerImage from "../assets/projects/ai-house-planner.webp";
+import carDealershipImage from "../assets/projects/car-dealership.webp";
+import carPricePredictionImage from "../assets/projects/car-price-prediction.webp";
+import fenceGuardImage from "../assets/projects/fenceguard-lk.webp";
+
 export const projects = [
   {
     id: "car-price-prediction-system",
@@ -11,7 +16,8 @@ export const projects = [
     category: null,
     role: null,
     featured: null,
-    image: null,
+    image: carPricePredictionImage,
+    imageAlt: "V7 AI Price Predictor vehicle valuation form",
     extra: "",
     liveUrl: "https://car-price-predictor-live-frontend.onrender.com/",
     repositoryUrl: "https://github.com/devFelina/car-price-predictor",
@@ -28,7 +34,8 @@ export const projects = [
     category: null,
     role: null,
     featured: null,
-    image: null,
+    image: carDealershipImage,
+    imageAlt: "Car Dealership System homepage and inventory overview",
     extra: "",
     liveUrl: "https://car-dealership-system-ltjq.onrender.com/",
     repositoryUrl: "https://github.com/devFelina/car-dealership-system",
@@ -162,8 +169,8 @@ export const projects = [
     projectType: ["Agentic AI", "Full Stack", "Architecture"],
     role: null,
     featured: null,
-    image: null,
-    imageAlt: null,
+    image: aiHousePlannerImage,
+    imageAlt: "HomePlannerAI landing page with a generated 3D house design",
     features: [
       "Land dimensions and terrain intake",
       "Room preference management",
@@ -180,7 +187,7 @@ export const projects = [
     context: null,
     extra: "",
     liveUrl: "https://ai-house-planner-akvm.vercel.app/",
-    repositoryUrl: null,
+    repositoryUrl: "https://github.com/devFelina/ai-house-planner",
   },
   {
     id: "fenceguard-lk",
@@ -195,8 +202,8 @@ export const projects = [
     projectType: ["Full Stack", "Hackathon", "Social Impact"],
     role: null,
     featured: null,
-    image: null,
-    imageAlt: null,
+    image: fenceGuardImage,
+    imageAlt: "FenceGuard LK community protection dashboard landing page",
     features: [
       "Electric fence fault reporting",
       "Interactive incident mapping",
@@ -207,6 +214,6 @@ export const projects = [
     context: "Built during a four-hour hackathon.",
     extra: "",
     liveUrl: "https://mini-hackathon-2026-ai-03.vercel.app/",
-    repositoryUrl: null,
+    repositoryUrl: "https://github.com/ManithSanvidu/Mini-Hackathon---2026-AI-03",
   },
 ];
