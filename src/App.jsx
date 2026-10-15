@@ -11,8 +11,14 @@ function App() {
 
   return (
     <div className="min-h-screen overflow-x-hidden">
+      <a
+        href="#main-content"
+        className="fixed left-4 top-3 z-[100] -translate-y-24 rounded-full bg-primary px-5 py-3 font-semibold text-primary-foreground shadow-xl transition-transform focus:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+      >
+        Skip to content
+      </a>
       <Navbar />
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <LoadingReveal />
         <Hero />
         <About />

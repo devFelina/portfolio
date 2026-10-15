@@ -1,4 +1,4 @@
-import { Button } from "@/components/Button";
+import { LinkButton } from "@/components/Button";
 import profileImg from '../assets/profile-photo.webp';
 import heroBgImg from '../assets/hero-bg-2.webp'; 
 
@@ -51,10 +51,6 @@ const heroDots = Array.from({ length: 30 }, (_, index) => ({
 }));
 
 export const Hero = () => {
-  const scrollToProjects = () => {
-    document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" });
-  };
-
   const handleDownloadCV = () => {
     const link = document.createElement("a");
     link.href = `${import.meta.env.BASE_URL}Kushan_Chamikara_Resume.pdf`; // Points directly to public folder
@@ -81,7 +77,7 @@ export const Hero = () => {
         {heroDots.map((dot, i) => (
           <div
             key={i}
-            className="absolute w-1.5 h-1.5 rounded-full opacity-60"
+            className="hero-decorative-dot absolute h-1.5 w-1.5 rounded-full opacity-60"
             style={{
               backgroundColor: "var(--color-primary)",
               left: dot.left,
@@ -118,14 +114,13 @@ export const Hero = () => {
 
             {/* CTAs */}
             <div className="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
-              <Button
+              <LinkButton
+                href="#projects"
                 size="lg"
-                onClick={scrollToProjects}
-                type="button"
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-black bg-white hover:bg-white/90"
               >
                 View Projects <ArrowRight className="w-5 h-5" />
-              </Button>
+              </LinkButton>
               <AnimatedBorderButton onClick={handleDownloadCV}>
                 <Download className="w-5 h-5" />
                 Download CV
