@@ -164,3 +164,91 @@ for (const width of [320, 375, 768, 1024, 1440]) {
     });
   });
 }
+
+test("section navigation anchors position content without excessive blank space or header clipping", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await waitForPortfolio(page);
+
+  const waitForScrollEnd = async () => {
+    await page.waitForFunction(() => {
+      return new Promise((resolve) => {
+        let lastY = window.scrollY;
+        let count = 0;
+        const interval = setInterval(() => {
+          if (Math.abs(window.scrollY - lastY) < 1) {
+            count += 1;
+          } else {
+            count = 0;
+            lastY = window.scrollY;
+          }
+          if (count >= 5) {
+            clearInterval(interval);
+            resolve(true);
+          }
+        }, 40);
+      });
+    }, { timeout: 7000 }).catch(() => {});
+  };
+
+  const primaryNavigation = page.getByRole("navigation", { name: "Primary navigation" });
+  const header = page.locator("header");
+
+  const sectionsToTest = [
+    { id: "about", linkName: "About", headingSelector: '#about span:has-text("About Me")' },
+    { id: "projects", linkName: "Projects", headingSelector: '#projects span:has-text("Selected Work")' },
+    { id: "skills", linkName: "Skills", headingSelector: '#skills span:has-text("Technical Skills")' },
+    { id: "contact", linkName: "Contact", headingSelector: '#contact span:has-text("Contact")' },
+    { id: "hero", linkName: "Home", headingSelector: "#hero h1" },
+  ];
+
+  for (const { id, linkName, headingSelector } of sectionsToTest) {
+    const navLink = primaryNavigation.getByRole("link", { name: linkName, exact: true });
+    await navLink.click();
+    await waitForScrollEnd();
+
+    const headerBox = await header.boundingBox();
+    const headerBottom = headerBox.y + headerBox.height;
+    const headingBox = await page.locator(headingSelector).boundingBox();
+
+    expect(headingBox).not.toBeNull();
+    // Heading must be fully below the fixed header
+    expect(headingBox.y).toBeGreaterThanOrEqual(headerBottom - 2);
+
+    if (id !== "hero") {
+      // Content eyebrow begins cleanly below the header without excessive gap (between 20px and 110px)
+      const gap = headingBox.y - headerBottom;
+      expect(gap).toBeGreaterThanOrEqual(20);
+      expect(gap).toBeLessThanOrEqual(110);
+
+      // Section top aligns with header bottom (no exposed previous section content)
+      const sectionBox = await page.locator(`#${id}`).boundingBox();
+      const exposedGap = sectionBox.y - headerBottom;
+      expect(exposedGap).toBeLessThanOrEqual(15);
+      expect(exposedGap).toBeGreaterThanOrEqual(-15);
+    } else {
+      // Hero returns to document top
+      const currentScrollY = await page.evaluate(() => window.scrollY);
+      expect(currentScrollY).toBeLessThanOrEqual(5);
+    }
+  }
+
+  // Direct hash navigation
+  await page.goto("./#projects");
+  await waitForScrollEnd();
+  const directHeadingBox = await page.locator('#projects span:has-text("Selected Work")').boundingBox();
+  const directHeaderBox = await header.boundingBox();
+  expect(directHeadingBox.y).toBeGreaterThanOrEqual(directHeaderBox.y + directHeaderBox.height - 2);
+
+  // History back and forward
+  await primaryNavigation.getByRole("link", { name: "About", exact: true }).click();
+  await waitForScrollEnd();
+  await expect(page).toHaveURL(/#about$/);
+
+  await page.goBack();
+  await waitForScrollEnd();
+  await expect(page).toHaveURL(/#projects$/);
+
+  await page.goForward();
+  await waitForScrollEnd();
+  await expect(page).toHaveURL(/#about$/);
+});

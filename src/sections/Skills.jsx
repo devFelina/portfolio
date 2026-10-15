@@ -10,7 +10,7 @@ const categoryIcons = {
 };
 
 export const Skills = () => (
-  <section id="skills" className="relative overflow-hidden py-28 sm:py-32">
+  <section id="skills" className="relative overflow-hidden pt-10 pb-20 sm:pt-12 sm:pb-24 lg:pt-14 lg:pb-28">
     <div className="pointer-events-none absolute inset-0 -z-10" aria-hidden="true">
       <div className="absolute -left-32 top-20 h-80 w-80 rounded-full bg-accent/[0.04] blur-3xl" />
       <div className="absolute -right-32 bottom-0 h-96 w-96 rounded-full bg-white/[0.03] blur-3xl" />

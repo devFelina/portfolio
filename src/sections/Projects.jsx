@@ -68,7 +68,7 @@ export const Projects = () => {
   }, []);
 
   return (
-    <section id="projects" className="relative overflow-hidden py-28 sm:py-32">
+    <section id="projects" className="relative overflow-hidden pt-10 pb-20 sm:pt-12 sm:pb-24 lg:pt-14 lg:pb-28">
       <div className="absolute inset-0 -z-10">
         <div className="absolute left-[-8rem] top-[-6rem] h-80 w-80 rounded-full bg-white/5 blur-3xl" />
         <div className="absolute right-[-10rem] top-32 h-96 w-96 rounded-full bg-white/4 blur-3xl" />

@@ -112,7 +112,7 @@ export const Contact = () => {
     "mt-2 min-h-12 w-full rounded-xl border border-border bg-background/70 px-4 py-3 text-foreground outline-none transition-[border-color,box-shadow,background-color] duration-200 placeholder:text-muted-foreground/60 hover:border-border-strong focus:border-accent focus:bg-background focus:ring-2 focus:ring-accent/20 disabled:cursor-not-allowed disabled:opacity-60";
 
   return (
-    <section id="contact" className="relative overflow-hidden py-28 sm:py-32">
+    <section id="contact" className="relative overflow-hidden pt-10 pb-20 sm:pt-12 sm:pb-24 lg:pt-14 lg:pb-28">
       <div className="pointer-events-none absolute inset-0 -z-10" aria-hidden="true">
         <div className="absolute -left-32 top-12 h-80 w-80 rounded-full bg-accent/[0.04] blur-3xl" />
       </div>

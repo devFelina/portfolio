@@ -48,7 +48,6 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 6rem;
   }
 
   body {
@@ -70,7 +69,11 @@
 
   section[id],
   main[id] {
-    scroll-margin-top: 6rem;
+    scroll-margin-top: 4.5rem;
+  }
+
+  #hero {
+    scroll-margin-top: 0;
   }
 }
 

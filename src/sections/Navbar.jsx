@@ -49,8 +49,8 @@ export const Navbar = () => {
         });
 
         const visibleSections = [...visibility.values()].sort((a, b) => {
-          const aDistance = Math.abs(a.boundingClientRect.top - 96);
-          const bDistance = Math.abs(b.boundingClientRect.top - 96);
+          const aDistance = Math.abs(a.boundingClientRect.top - 72);
+          const bDistance = Math.abs(b.boundingClientRect.top - 72);
           return aDistance - bDistance;
         });
 
@@ -59,7 +59,7 @@ export const Navbar = () => {
         }
       },
       {
-        rootMargin: "-88px 0px -55% 0px",
+        rootMargin: "-72px 0px -55% 0px",
         threshold: [0, 0.1, 0.25, 0.5],
       },
     );

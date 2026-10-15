@@ -9,7 +9,7 @@ const experienceIcons = {
 };
 
 export const Experience = () => (
-  <section id="experience" className="relative overflow-hidden py-28 sm:py-32">
+  <section id="experience" className="relative overflow-hidden pt-10 pb-20 sm:pt-12 sm:pb-24 lg:pt-14 lg:pb-28">
     <div className="pointer-events-none absolute left-1/2 top-0 h-px w-[min(88%,80rem)] -translate-x-1/2 bg-gradient-to-r from-transparent via-border-strong to-transparent" aria-hidden="true" />
     <div className="container mx-auto px-6">
       <div className="max-w-3xl">
