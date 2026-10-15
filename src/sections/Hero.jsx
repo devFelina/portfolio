@@ -8,6 +8,8 @@ import {
   Download,
 } from "lucide-react";
 import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
+import { heroSkills } from "@/data/skills";
+import { socialLinks as sharedSocialLinks } from "@/data/socialLinks";
 
 const GitHubIcon = ({ className = "" }) => (
   <svg
@@ -31,43 +33,15 @@ const LinkedInIcon = ({ className = "" }) => (
   </svg>
 );
 
-const skills = [
-  "Python",
-  "Java",
-  "JavaScript",
-  "C",
-  "Scikit-learn",
-  "TensorFlow",
-  "NLP",
-  "Random Forest",
-  "OpenAI API",
-  "React",
-  "Next.js",
-  "TypeScript",
-  "Node.js",
-  "PostgreSQL",
-  "MongoDB",
-  "Docker",
-  "AWS",
-  "Vercel",
-  "Tailwind CSS",
-  "Figma",
-  "Git",
-  "GitHub Actions",
-];
+const socialIcons = {
+  github: GitHubIcon,
+  linkedin: LinkedInIcon,
+};
 
-const socialLinks = [
-  {
-    label: "GitHub",
-    href: "https://github.com/devFelina",
-    Icon: GitHubIcon,
-  },
-  {
-    label: "LinkedIn",
-    href: "https://www.linkedin.com/in/kushan-chamikara-a24933279/",
-    Icon: LinkedInIcon,
-  },
-];
+const socialLinks = sharedSocialLinks.map((social) => ({
+  ...social,
+  Icon: socialIcons[social.id],
+}));
 
 const heroDots = Array.from({ length: 30 }, (_, index) => ({
   left: `${(index * 37 + 11) % 100}%`,
@@ -221,7 +195,7 @@ export const Hero = () => {
              bg-gradient-to-l from-background to-transparent z-10"
             />
             <div className="flex animate-marquee">
-              {[...skills, ...skills].map((skill, idx) => (
+              {[...heroSkills, ...heroSkills].map((skill, idx) => (
                 <div key={idx} className="flex-shrink-0 px-8 py-4">
                   <span className="text-xl font-semibold text-muted-foreground/50 hover:text-muted-foreground transition-colors">
                     {skill}

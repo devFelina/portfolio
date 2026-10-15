@@ -3,11 +3,7 @@ import { Button } from "/src/components/Button";
 import emailjs from "@emailjs/browser";
 // Added standard Lucide icon imports (or adjust to match your project icon library)
 import { Send, CheckCircle, AlertCircle } from "lucide-react"; 
-
-const socialLinks = [
-  { label: "GitHub", href: "https://github.com/devFelina" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/kushan-chamikara-a24933279/" },
-];
+import { socialLinks } from "@/data/socialLinks";
 
 export const Contact = () => {
   const [formData, setFormData] = useState({

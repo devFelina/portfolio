@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ArrowUpRight } from "lucide-react";
+import { projects } from "@/data/projects";
 
 const GitHubIcon = ({ className = "" }) => (
   <svg
@@ -11,97 +12,6 @@ const GitHubIcon = ({ className = "" }) => (
     <path d="M12 .5C5.73.5.75 5.64.75 12.02c0 5.1 3.2 9.42 7.64 10.95.56.1.77-.25.77-.55 0-.27-.01-1.02-.02-2-3.11.7-3.77-1.55-3.77-1.55-.51-1.34-1.25-1.7-1.25-1.7-1.03-.72.08-.71.08-.71 1.14.08 1.74 1.2 1.74 1.2 1 .18 1.96.1 2.44.02.1-.75.39-1.2.7-1.48-2.48-.29-5.08-1.28-5.08-5.68 0-1.25.43-2.27 1.14-3.07-.12-.29-.49-1.46.11-3.03 0 0 .93-.3 3.05 1.17.89-.25 1.84-.37 2.79-.37.95 0 1.9.12 2.79.37 2.12-1.47 3.05-1.17 3.05-1.17.6 1.57.23 2.74.11 3.03.71.8 1.14 1.82 1.14 3.07 0 4.41-2.6 5.38-5.09 5.67.4.35.77 1.03.77 2.08 0 1.5-.01 2.71-.01 3.08 0 .3.2.66.78.55 4.43-1.53 7.63-5.85 7.63-10.95C23.25 5.64 18.27.5 12 .5Z" />
   </svg>
 );
-
-const projects = [
-  {
-    year: "2026",
-    title: "Car Price Prediction System",
-    description:
-      "AutoPulse is an intelligent machine learning system that accurately predicts a vehicle's current market value based on real-world data.",
-    descriptionExtended:
-      "Built in Python using real-world car data of over 10,000 rows, this system trains a Scikit-learn Random Forest Regressor combined with a custom Pandas rule-based layer that targets premium trims for enhanced pricing accuracy. The entire pipeline—complete with engineered features like usage intensity and performance metrics (MAE / R^2)—is serialized into a .pkl file via Joblib for seamless deployment and live depreciation simulations.",
-    tags: ["Python", "Pandas", "Scikit-learn", "Joblib"],
-    extra: "",
-    url: "https://car-price-predictor-live-frontend.onrender.com",
-    githubUrl: "https://github.com/devFelina/car-price-predictor",
-  },
-  {
-    year: "2026",
-    title: "Car Dealership MERN Application",
-    description:
-      "A full-stack MERN (MongoDB, Express.js, React.js, Node.js) web application designed to manage vehicle sales, customer interactions, and dealership operations.",
-    descriptionExtended:"A full-stack MERN (MongoDB, Express.js, React.js, Node.js) web application designed to manage vehicle sales, customer interactions, and dealership operations. This system demonstrates a scalable architecture with real-world business modules such as sales, leads, appointments, and notifications.",
-    tags: ["JavaScript", "React.js", "Node.js", "Express.js", "MongoDB"],
-    extra: "",
-    url: "https://github.com/devFelina/car-dealership-system",
-    githubUrl: "https://github.com/devFelina/car-dealership-system",
-  },
-  {
-    year: "2026",
-    title: "Email Automation System",
-    description:
-      "This AI-powered system automatically fetches emails from Gmail, cleans and classifies them by type, and uses a Transformer model to deliver concise summaries directly to Telegram.",
-    descriptionExtended:"Built with FastAPI and SQLite, this backend securely accesses the Gmail API using OAuth 2.0 and utilizes APScheduler to regularly pull, clean, and deduplicate incoming messages. It leverages a Hugging Face T5 Transformer model to classify email intent—such as finance, OTPs, or spam—and generates summaries that are instantly dispatched via the Telegram Bot API.",
-    tags: ["Python", "Hugging Face", "FastAPI", "SQLite"],
-    extra: "",
-    url: "https://github.com/devFelina/email-automation-system",
-    githubUrl: "https://github.com/devFelina/email-automation-system",
-  },
-  {
-    year: "2026",
-    title: "AI Branch Cards — Chrome Extension",
-    description:
-      "A smart Chrome extension that transforms AI conversations into interactive branch cards, allowing users to explore concepts without losing the main chat flow.",
-    descriptionExtended:"Built as a lightweight browser extension, this tool injects an interactive layer into web-based AI interfaces to capture user-selected text and pass context-aware snippets to an LLM background script. By isolating these exploratory follow-up questions and summaries inside independent, modular UI cards, it eliminates context-switching while preserving the state and continuity of the main chat window.",
-    tags: ["JavaScript"],
-    extra: "",
-    url: "https://github.com/devFelina/ticky-otes",
-    githubUrl: "https://github.com/devFelina/ticky-otes",
-  },
-  {
-    year: "2026",
-    title: "LangChain-RAG-ChatBot",
-    description:
-      "This LangChain-RAG-ChatBot integrates Retrieval-Augmented Generation (RAG) with LangChain to create a powerful conversational AI system.",
-    descriptionExtended:"A conversational question-answering chatbot built with LangChain using a Retrieval-Augmented Generation (RAG) architecture. This project demonstrates how to combine document embeddings, a vector store, and a language model to answer user queries using relevant external content.",
-    tags: ["Python", "LangChain", "GeminiAPI", "RAG"],
-    url: "https://github.com/devFelina/LangChain-RAG-ChatBot",
-    githubUrl: "https://github.com/devFelina/LangChain-RAG-ChatBot",
-  },
-    {
-    year: "2026",
-    title: "Sri Lanka Dengue Surveillance Dashboard",
-    description:
-      "The dashboard helps users explore weekly dengue reports using interactive visualisations and district-level analytics.",
-    descriptionExtended:"A web-based dashboard for visualizing and analyzing dengue surveillance data in Sri Lanka. The application provides interactive charts and maps to help public health officials monitor disease spread and allocate resources effectively.",
-    tags: ["TypeScript", "React.js","Vite"],
-    extra: "",
-    url: "https://devfelina.github.io/Sri-Lanka-Dengue-Stat/",
-    githubUrl: "https://github.com/devFelina/Sri-Lanka-Dengue-Stat",
-  },
-   {
-    year: "2026",
-    title: "Class Management System",
-    description:
-      "This Class Management System provides a clean web-based portal for administrators to easily handle full CRUD operations for managing students, tutors, and courses.",
-    descriptionExtended:"Built using the Java Spring Boot framework and managed via Maven, this enterprise-grade backend handles secure data persistence using a MySQL database. The application exposes robust RESTful endpoints for student, tutor, and course data manipulation, deploying seamlessly onto an embedded Apache Tomcat server for high-performance request handling.",
-    tags: ["Java", "Spring Boot", "MySQL"],
-    extra: "Contribute to user management.",
-    url: "https://github.com/devFelina/home-tutor",
-    githubUrl: "https://github.com/devFelina/home-tutor",
-  },
-  {
-    year: "2026",
-    title: "Blockchain System",
-    description:
-      "Mini blockchain implementation in Python with Proof-of-Work, transactions, and REST API.",
-    descriptionExtended:"",
-    tags: ["Python", "Flask", "SHA-256"],
-    extra: "Educational project.",
-    url: "https://github.com/devFelina/blockchain",
-    githubUrl: "https://github.com/devFelina/blockchain",
-  },
-];
 
 export const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -130,7 +40,7 @@ export const Projects = () => {
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {projects.map((project, index) => (
             <article
-              key={project.title}
+              key={project.id}
               className="group relative w-full max-w-sm mx-auto overflow-hidden rounded-[1.75rem] border border-border bg-card/70 p-5 sm:p-6 transition-all duration-300 hover:-translate-y-1 hover:border-white/20 hover:bg-card/90 hover:shadow-[0_0_40px_rgba(255,255,255,0.05)] animate-fade-in"
               style={{ animationDelay: `${(index + 1) * 80}ms` }}
             >
@@ -159,11 +69,11 @@ export const Projects = () => {
               </div>
 
               <p className="relative mt-4 max-w-md text-sm leading-6 text-muted-foreground">
-                {project.description}
+                {project.summary}
               </p>
 
               <div className="relative mt-6 flex flex-wrap gap-2.5">
-                {project.tags.map((tag) => (
+                {project.technologies.map((tag) => (
                   <span
                     key={tag}
                     className="rounded-full border border-border/80 bg-background/30 px-3 py-1 text-xs font-medium text-muted-foreground transition-colors duration-300 group-hover:border-white/15 group-hover:text-foreground"
@@ -210,7 +120,7 @@ export const Projects = () => {
                   {selectedProject.title}
                 </h3>
                 <p className="mt-4 max-w-2xl text-base sm:text-lg leading-8 text-muted-foreground">
-                  {selectedProject.descriptionExtended || selectedProject.description}
+                  {selectedProject.details || selectedProject.summary}
                 </p>
 
                 <div className="mt-8">
@@ -218,7 +128,7 @@ export const Projects = () => {
                     Tech Stack
                   </p>
                   <div className="mt-4 flex flex-wrap gap-3">
-                    {selectedProject.tags.map((tag) => (
+                    {selectedProject.technologies.map((tag) => (
                       <span
                         key={tag}
                         className="rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5 text-sm font-medium text-muted-foreground"
@@ -231,7 +141,7 @@ export const Projects = () => {
 
                 <div className="mt-8 flex flex-wrap gap-3">
                   <a
-                    href={selectedProject.url}
+                    href={selectedProject.liveUrl}
                     target="_blank"
                     rel="noreferrer"
                     className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-medium text-black transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/90"
@@ -240,7 +150,7 @@ export const Projects = () => {
                     <ArrowUpRight className="h-4 w-4" />
                   </a>
                   <a
-                    href={selectedProject.githubUrl}
+                    href={selectedProject.repositoryUrl}
                     target="_blank"
                     rel="noreferrer"
                     aria-label="Open GitHub"

@@ -1,19 +1,6 @@
-export const Skills = () => {
-	const skillRows = [
-		{
-			label: "Frontend",
-			tags: ["JavaScript", "React", "Next.js", "Vite", "Tailwind CSS"],
-		},
-		{
-			label: "Backend",
-			tags: ["Node.js", "Express", "Spring Boot", "Java", "Python", "PostgreSQL", "MongoDB"],
-		},
-		{
-			label: "Tools & Platform",
-			tags: ["Colab", "Docker", "GitHub"],
-		},
-	];
+import { skillRows } from "@/data/skills";
 
+export const Skills = () => {
 	return (
 		<section id="skills" className="py-28 sm:py-32 relative overflow-hidden">
 			<div className="absolute inset-0 -z-10">
@@ -48,7 +35,7 @@ export const Skills = () => {
 							</div>
 
 							<div className="flex flex-wrap gap-3 sm:gap-3.5">
-								{row.tags.map((tag) => (
+								{row.technologies.map((tag) => (
 									<span
 										key={tag}
 										className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm sm:text-[0.95rem] font-medium text-muted-foreground transition-all duration-300 hover:border-white/20 hover:bg-white/10 hover:text-foreground"
